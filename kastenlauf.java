@@ -1,4 +1,4 @@
-//V00873441
+
 import java.util.Stack;
 import java.util.Scanner;
 public class kastenlauf{

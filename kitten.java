@@ -1,4 +1,4 @@
-//V00873441
+
 import java.util.*;
 import java.io.*;
 public class kitten {
