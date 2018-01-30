@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 import java.math.*;
-public class second{
+public class A_Towering_problem{
 		public static void main(String []args) throws Exception{
 		Scanner scan=new Scanner(System.in);
 		// PriorityQueue<Integer> q=new PriorityQueue<Integer>(Collections.reverseOrder());
