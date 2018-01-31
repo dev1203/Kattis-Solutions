@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 import java.math.*;
-public class first{
+public class Odd_man_out{
 		public static void main(String []args) throws Exception{
 		// BufferedReader scan=new BufferedReader(new InputStreamReader(System.in));
 		// String s=scan.readLine();
