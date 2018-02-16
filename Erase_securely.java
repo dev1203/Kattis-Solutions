@@ -1,14 +1,16 @@
 import java.util.Arrays;
 import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 public class Erase_securely{
-	public static void main(String []args){
-		Scanner scan=new Scanner(System.in);
-		int number_of_times=Integer.parseInt(scan.nextLine().trim());
-		String s=scan.nextLine();
+	public static void main(String []args) throws Exception{
+		 BufferedReader scan=new BufferedReader(new InputStreamReader(System.in));
+		int number_of_times=Integer.parseInt(scan.readLine().trim());
+		String s=scan.readLine();
 		String mylist[]=s.split("");
-		s=scan.nextLine();
-		String mylist2[]=s.split("");
-		for(int r=0;r<number_of_times;r++){
+		String s1=scan.readLine();
+		if(number_of_times%2!=0){
+			s="";
 			for(int i=0;i<mylist.length;i++){
 				if(mylist[i].equals("0")){
 				mylist[i]="1";
@@ -16,17 +18,15 @@ public class Erase_securely{
 				else{
 					mylist[i]="0";
 				}
+				s+=mylist[i];
 			}
 		}
-		System.out.println(check(mylist,mylist2));
-	}
-	public static String check(String a[],String b[]){
-		for(int i=0;i<a.length;i++){
-			if(!a[i].equals(b[i])){
-				return "Deletion failed";
-			}
+		if(s.equals(s1)){
+			System.out.println("Deletion succeeded");
 		}
-		return "Deletion succeeded";
+		else{
+			System.out.println("Deletion failed");
+		}
 	}
-
+	
 }
