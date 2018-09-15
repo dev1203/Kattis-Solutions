@@ -1,0 +1,2 @@
+direction = input()
+print(direction)
