@@ -4,24 +4,16 @@ public class ceiling{
         Scanner scan = new Scanner(System.in);
         String testcase[] = scan.nextLine().split(" ");
         int number = Integer.parseInt(testcase[0]);
-        Node roots[] = new Node[number];
+        Set<String> set = new HashSet<String>();
         for (int i=0 ;i< number; i++){
             BST tree = new BST();
             String input[] = scan.nextLine().split(" ");
             for (String line : input){
                 tree.insert(Integer.parseInt(line));
             }
-            roots[i] = tree.root;
+            set.add(tree.traverse());
         }
-        int count = 0;
-        for (int i=0;i<roots.length;i++){
-            for(int j=0;j<i;j++){
-                if(isSame(roots[i],roots[j])){
-                    count ++;
-                }
-            }
-        }
-        System.out.println(number-count);
+        System.out.println(set.size());
         scan.close();
      }
      public static boolean isSame(Node root1, Node root2){
@@ -77,21 +69,23 @@ class BST{
             }
         }
     }
-    public void traverse(){
+    public String traverse(){
         if (this.root == null){
-            return;
+            return "";
         }
-        else{
-            inorderTraverse(root);
-        }
+        StringBuilder str = new StringBuilder();
+        inorderTraverse(root, str);
+        return str.toString();
     }
-    public void inorderTraverse(Node current){
+    public void inorderTraverse(Node current,StringBuilder str){
         if(current.left != null){
-            inorderTraverse(current.left);
+            str.append('l');
+            inorderTraverse(current.left,str);
         }
-        System.out.print(current.data+ " -> " );
+        str.append('x');
         if(current.right != null){
-            inorderTraverse(current.right);
+            str.append('r');
+            inorderTraverse(current.right,str);
         }
     }
 }
